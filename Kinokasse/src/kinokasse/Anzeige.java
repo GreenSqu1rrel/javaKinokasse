@@ -148,7 +148,19 @@ public class Anzeige extends javax.swing.JFrame {
         Double totalPreis = kinderPreis + erwachsenenPreis;
             
         //WEnn mehrere Familien
-        Double countFams = kinderanzahl / 2;
+        Double countFams = 1.0;
+        if(erwachsenenzahl > kinderanzahl){
+            
+            countFams = kinderanzahl / 2;
+            
+        }
+        else if(erwachsenenzahl < kinderanzahl){
+            countFams = erwachsenenzahl / 2;
+        }
+        else{
+            System.out.println("Fehler");
+        }
+        
         
         //Wenn Rabatt Rabatt
         Double mengenrabatt = countFams * 0.05;
